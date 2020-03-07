@@ -52,7 +52,6 @@ class UICreateProfileView extends React.Component {
         return true;
     }
 
-
     componentDidMount() {
         const pwScoreLabel = document.querySelector('#password-score-progress');
         const input1 = document.querySelector('#profile-name');
