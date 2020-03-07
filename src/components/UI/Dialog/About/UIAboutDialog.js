@@ -98,23 +98,6 @@ class UIAboutDialog extends React.Component {
                                                 <img id={'android-icon'} src={require('./android-logo.png')} />
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>
-                                                <span onClick={openDownload} className={'www'}>Download</span>
-                                            </td>
-                                            <td>
-                                                <span onClick={openDownload} className={'www'}>Download</span>
-                                            </td>
-                                            <td>
-                                                <span onClick={openDownload} className={'www'}>Download</span>
-                                            </td>
-                                            <td>
-                                                <span onClick={openDownload} className={'www'}>Download</span>
-                                            </td>
-                                            <td>
-                                                <span onClick={openDownload} className={'www'}>Download</span>
-                                            </td>
-                                        </tr>
                                         </tbody>
                                     </table>
                                 </div>
