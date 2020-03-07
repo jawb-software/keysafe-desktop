@@ -62,7 +62,6 @@ class I18n {
     static aboutKeysafe_About_SourceCode_Button() { return I18n._translate('aboutKeysafe.About.SourceCode.Button'); }
     static aboutKeysafe_About_Frameworks_Title() { return I18n._translate('aboutKeysafe.About.Frameworks.Title'); }
     static aboutKeysafe_About_License_Title() { return I18n._translate('aboutKeysafe.About.License.Title'); }
-    static aboutKeysafe_About_License_Text() { return I18n._translate('aboutKeysafe.About.License.Text'); }
 
     //ABOUT-EncryptionInfo
     static aboutKeysafe_EncryptionInfo_Title(){ return I18n._translate('aboutKeysafe.EncryptionInfo.Title'); }

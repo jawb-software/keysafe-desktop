@@ -9,12 +9,16 @@
     max-height: 400px;
 }
 
+
 .UIAboutDialog #about-container img#keysafe-icon {
     height: 60px;
     display: block;
     margin: 20px auto;
 }
 
+div.license-text {
+    user-select: text;
+}
 
 div#version-info {
     display: block;

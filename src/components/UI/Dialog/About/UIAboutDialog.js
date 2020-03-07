@@ -8,18 +8,16 @@ import UIDialogTitleWithClose from "../UIDialogTitleWithClose";
 import {USER_ACTION_CLOSE_ABOUT} from "../../../Basic/consts";
 import I18n from "../../../Basic/I18n/i18n";
 import {openDownload, openGithub, openJawbWebsite} from "../../../Basic/utils";
+import UILicenseView from "./UILicenseView";
 
 class UIAboutDialog extends React.Component {
 
     constructor(props) {
         super(props);
         this.handleCancelClick  = this.handleCancelClick.bind(this);
-        this.openJawbWebsite  = this.openJawbWebsite.bind(this);
-        this.openDownload  = this.openDownload.bind(this);
     }
 
     componentDidMount() {
-
         componentHandler.upgradeElement(document.getElementById('tabs'));
     }
 
@@ -45,7 +43,6 @@ class UIAboutDialog extends React.Component {
 
         const frameworksTitle = I18n.aboutKeysafe_About_Frameworks_Title();
         const licenseTitle = I18n.aboutKeysafe_About_License_Title();
-        const licenseText = I18n.aboutKeysafe_About_License_Text();
 
         return (
 
@@ -146,7 +143,7 @@ class UIAboutDialog extends React.Component {
 
                                 <div id={'license-container'}>
                                     <h5> {licenseTitle} </h5>
-                                    <pre dangerouslySetInnerHTML={{__html: licenseText}}/>
+                                    <UILicenseView/>
                                 </div>
 
                             </div>
