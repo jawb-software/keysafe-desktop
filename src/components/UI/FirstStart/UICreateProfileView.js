@@ -3,7 +3,6 @@ import './UICreateProfileView.css';
 import {MIN_MASTER_PW_LENGTH, MIN_MASTER_PW_SCORE, USER_ACTION_OPEN_LOGIN_VIEW, USER_ACTION_SAVE_NEW_PROFILE} from "../../Basic/consts";
 import I18n from "../../Basic/I18n/i18n";
 import {calculateScore} from "../../Basic/PasswordGenerator/pwanalyse";
-import {getCurrentTheme} from "../../Basic/utils";
 
 class UICreateProfileView extends React.Component {
 
@@ -20,7 +19,7 @@ class UICreateProfileView extends React.Component {
             canSave: false,
             profiles: props.profiles
         };
-        console.log(props.profiles);
+        // console.log(props.profiles);
     }
 
     onGoToLoginClick() {
