@@ -78,5 +78,9 @@
       "target": "nsis",
       "icon": "build/icon.ico"
     }
+  },
+  "optionalDependencies": {
+    "electron-installer-debian" : "*"
   }
+
 }
