@@ -37,7 +37,7 @@ class UILoginView extends React.Component {
 
         this.state = {
             canSave: true,
-            password: 'qwRert12+-',
+            password: '',
             profileId: lastId
         };
     }
