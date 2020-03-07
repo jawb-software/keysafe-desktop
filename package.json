@@ -12,7 +12,7 @@
     "type": "git",
     "url": "https://github.com/jawb-software/keysafe-desktop"
   },
-  "license": "MIT",
+  "license": "GNU GPLv3",
   "main": "main.js",
   "scripts": {
     "clean": "rimraf dist builds installers",
