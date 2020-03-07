@@ -109,7 +109,7 @@ class UILoginView extends React.Component {
         const dfltValue = this.state.profileId;
 
         return (
-            <div className="keysafe-Outer-Container">
+            <div className="keysafe-Outer-Container keysafe-Outer-Container-Login">
 
                 <div id={'website-links'}>
                     <span className={'www'} onClick={openKeysafeWebsite}>www.keysafe-app.com</span>
