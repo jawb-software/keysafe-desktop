@@ -1,7 +1,7 @@
 {
   "name": "keysafe",
   "version": "1.0.0",
-  "description": "Keysafe - password manager for desktop. Secure, free and open source",
+  "description": "Keysafe - password manager for desktop. Secure, free and open source. By jawb.de",
   "author": {
     "name": "jawb software",
     "email": "contact@jawb.de",
@@ -10,7 +10,7 @@
   "homepage": "https://keysafe-app.com",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/jawb-software/keysafe-desktop"
   },
   "license": "MIT",
   "main": "main.js",
