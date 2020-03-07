@@ -3,6 +3,7 @@ import './UILoginView.css';
 import {MIN_MASTER_PW_LENGTH, USER_ACTION_OPEN_NEW_PROFILE_VIEW, USER_ACTION_DO_LOGIN} from "../../Basic/consts";
 import UIClear from "../Basic/UIClear";
 import I18n from "../../Basic/I18n/i18n";
+import {openJawbWebsite, openKeysafeWebsite} from "../../Basic/utils";
 
 class UILoginView extends React.Component {
 
@@ -109,6 +110,11 @@ class UILoginView extends React.Component {
 
         return (
             <div className="keysafe-Outer-Container">
+
+                <div id={'website-links'}>
+                    <span className={'www'} onClick={openKeysafeWebsite}>www.keysafe-app.com</span>
+                    <span className={'www'} onClick={openJawbWebsite}>www.jawb.de</span>
+                </div>
                 <div className="keysafe-Middle-Container">
                     <div className="keysafe-Inner-Container keysafe-Login-Container">
 
@@ -130,6 +136,7 @@ class UILoginView extends React.Component {
                         <button className="UILoginView BasicButton LoginButton" onClick={this.onLoginClick} disabled={!this.state.canSave}>{applyBtn}</button>
                         <button className="UILoginView BasicButton CreateProfileButton" onClick={this.onCreateProfileClick}>{createProfileBtn}</button>
                         <UIClear/>
+
                     </div>
                 </div>
             </div>

@@ -7,6 +7,7 @@ import UIClear from "../../Basic/UIClear";
 import UIDialogTitleWithClose from "../UIDialogTitleWithClose";
 import {USER_ACTION_CLOSE_ABOUT} from "../../../Basic/consts";
 import I18n from "../../../Basic/I18n/i18n";
+import {openDownload, openGithub, openJawbWebsite} from "../../../Basic/utils";
 
 class UIAboutDialog extends React.Component {
 
@@ -24,30 +25,6 @@ class UIAboutDialog extends React.Component {
 
     handleCancelClick(){
         this.props.onUserAction(USER_ACTION_CLOSE_ABOUT);
-    }
-
-    openJawbWebsite() {
-        try {
-            require('electron').shell.openExternal('https://www.jawb.de');
-        } catch (e) {
-            console.error(e);
-        }
-    }
-
-    openGithub() {
-        try {
-            require('electron').shell.openExternal('https://github.com/jawb-software/keysafe-desktop');
-        } catch (e) {
-            console.error(e);
-        }
-    }
-
-    openDownload() {
-        try {
-            require('electron').shell.openExternal('https://keysafe-app.com/download');
-        } catch (e) {
-            console.error(e);
-        }
     }
 
     render() {
@@ -126,19 +103,19 @@ class UIAboutDialog extends React.Component {
                                         </tr>
                                         <tr>
                                             <td>
-                                                <span onClick={this.openDownload} className={'www'}>Download</span>
+                                                <span onClick={openDownload} className={'www'}>Download</span>
                                             </td>
                                             <td>
-                                                <span onClick={this.openDownload} className={'www'}>Download</span>
+                                                <span onClick={openDownload} className={'www'}>Download</span>
                                             </td>
                                             <td>
-                                                <span onClick={this.openDownload} className={'www'}>Download</span>
+                                                <span onClick={openDownload} className={'www'}>Download</span>
                                             </td>
                                             <td>
-                                                <span onClick={this.openDownload} className={'www'}>Download</span>
+                                                <span onClick={openDownload} className={'www'}>Download</span>
                                             </td>
                                             <td>
-                                                <span onClick={this.openDownload} className={'www'}>Download</span>
+                                                <span onClick={openDownload} className={'www'}>Download</span>
                                             </td>
                                         </tr>
                                         </tbody>
@@ -153,7 +130,7 @@ class UIAboutDialog extends React.Component {
                                     <p>
                                         {sourceCodeText}<br/>
                                     </p>
-                                    <button className="BasicButton" onClick={this.openGithub}>{sourceCodeButton}</button>
+                                    <button className="BasicButton" onClick={openGithub}>{sourceCodeButton}</button>
                                     <UIClear/>
                                 </div>
 
@@ -180,7 +157,7 @@ class UIAboutDialog extends React.Component {
                         <div id={'copyr'}>
 
                             <div id={'footer-version-copyr-container'}>
-                                <span id={'www'} onClick={this.openJawbWebsite}>www.jawb.de</span>
+                                <span id={'www'} onClick={openJawbWebsite}>www.jawb.de</span>
                                 <span>contact@jawb.de</span>
                                 Copyright &copy; 2019-{year} - jawb software
                             </div>

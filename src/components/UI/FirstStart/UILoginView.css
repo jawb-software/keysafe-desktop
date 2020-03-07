@@ -1,3 +1,11 @@
+.keysafe-Outer-Container {
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    height: calc(100% - 0px);
+}
+
 .LoginButton{
     float: left;
     margin-left: 0px;
@@ -7,6 +15,26 @@
     float: right;
     margin-right: 0px;
 
+}
+
+div#website-links {
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+}
+
+div#website-links span.www {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
+    color: #555;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+div#website-links span.www:hover{
+    color: #0d47a1;
 }
 
 .keysafe-Login-Container{

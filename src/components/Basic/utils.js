@@ -14,6 +14,38 @@ export function getCurrentTheme() {
     }
 }
 
+export function openDownload() {
+    try {
+        require('electron').shell.openExternal('https://keysafe-app.com/#download');
+    } catch (e) {
+        console.error(e);
+    }
+}
+
+
+export function openGithub() {
+    try {
+        require('electron').shell.openExternal('https://github.com/jawb-software/keysafe-desktop');
+    } catch (e) {
+        console.error(e);
+    }
+}
+
+export function openKeysafeWebsite() {
+    try {
+        require('electron').shell.openExternal('https://www.keysafe-app.com');
+    } catch (e) {
+        console.error(e);
+    }
+}
+
+export function openJawbWebsite() {
+    try {
+        require('electron').shell.openExternal('https://www.jawb.de');
+    } catch (e) {
+        console.error(e);
+    }
+}
 
 
 export function notEmpty(array) {
