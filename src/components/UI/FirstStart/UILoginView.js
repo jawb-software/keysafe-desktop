@@ -45,9 +45,9 @@ class UILoginView extends React.Component {
 
     onLoginClick(){
         const profileId = this.state.profileId;
-        const password = this.state.password;
+        const password  = this.state.password;
 
-        if(password.length >= MIN_MASTER_PW_LENGTH && profileId.length){
+        if(password && password.length > 0 && profileId.length){
             this.props.onUserAction(USER_ACTION_DO_LOGIN, {
                 profileId: profileId,
                 password: password
@@ -64,7 +64,7 @@ class UILoginView extends React.Component {
         const profileId = el.target.value;
         const password  = this.state.password;
 
-        this.setState({profileId: profileId, canSave: profileId.length && password.length >= MIN_MASTER_PW_LENGTH});
+        this.setState({profileId: profileId, canSave: profileId.length && password.length > 0});
     }
 
     handleKeyPress(e){
@@ -88,7 +88,7 @@ class UILoginView extends React.Component {
     handleChange(e) {
         const profileId = this.state.profileId;
         const password  = e.target.value;
-        this.setState({password: password, canSave: profileId.length && password.length >= MIN_MASTER_PW_LENGTH});
+        this.setState({ password: password, canSave: profileId.length && password.length > 0 });
     }
 
     render() {
@@ -98,7 +98,7 @@ class UILoginView extends React.Component {
         const applyBtn         = I18n.login_DoLogin();
         const createProfileBtn = I18n.login_CreateNewProfile();
 
-        const options = this.props.profiles.map(p =>{
+        const options = this.props.profiles.map(p => {
             return (<option key={p.id} value={p.id}>{p.name}</option>);
         });
 
