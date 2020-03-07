@@ -1,0 +1,147 @@
+.font-size-16px{ font-size: 16px;}
+.font-size-18px{ font-size: 18px;}
+.font-size-20px{ font-size: 20px;}
+.font-size-22px{ font-size: 22px;}
+
+.keysafe-background-color-accent{
+    background-color: #FF5722;
+}
+
+.keysafe-layout .mdl-layout__header .mdl-layout__drawer-button {
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.keysafe-navigation {
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+.keysafe-layout .keysafe-navigation .mdl-navigation__link {
+    display: -webkit-flex !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #444;
+    font-weight: bolder;
+}
+
+.keysafe-layout .keysafe-navigation .mdl-navigation__link:hover {
+    background-color: #ececec;
+    color: #37474F;
+}
+
+.keysafe-navigation .mdl-navigation__link .material-icons {
+    font-size: 24px;
+    color: #444444;
+    margin-right: 32px;
+}
+
+.keysafe-content {
+}
+
+/* TODO: Find a proper solution to have the graphs
+ * not float around outside their container in IE10/11.
+ * Using a browserhacks.com solution for now.
+ */
+_:-ms-input-placeholder, :root .keysafe-graphs {
+    min-height: 664px;
+}
+
+_:-ms-input-placeholder, :root .keysafe-graph {
+    max-height: 300px;
+}
+
+.keysafe-options h3 {
+    margin: 0;
+}
+
+.keysafe-options .mdl-checkbox__box-outline {
+    border-color: rgba(255, 255, 255, 0.89);
+}
+
+.keysafe-options ul {
+    margin: 0;
+    list-style-type: none;
+}
+
+.keysafe-options li {
+    margin: 4px 0;
+}
+
+.keysafe-options .material-icons {
+    color: rgba(255, 255, 255, 0.89);
+}
+
+.keysafe-options .mdl-card__actions {
+    height: 64px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    box-sizing: border-box;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.keysafe-nav-sepatator {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0));
+}
+
+.mdl-card, .mdl-card__supporting-text {
+    overflow: inherit;
+}
+
+.mdl-card {
+    width: 100% !important;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: white;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(255,171,64);
+    border: 2px white solid;
+}
+
+/* */
+
+.keysafe-Outer-Container {
+    display: table;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    height: calc(100% - 180px);
+    width: 100%;
+}
+
+.keysafe-Middle-Container {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.keysafe-Inner-Container {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+button.BasicButtonFixedSize {
+    width: 200px;
+}
+
+body, span, label, div, p {
+    -webkit-font-smoothing: subpixel-antialiased !important;
+}

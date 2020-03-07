@@ -1,0 +1,40 @@
+.keysafe-RemoveProfile-Outer-Container{
+    top: 0 !important;
+}
+
+.keysafe-RemoveProfile-Container{
+    width: 450px;
+}
+
+.RemoveProfile{
+    float: left;
+    margin-left: 0px;
+}
+
+.RemoveProfile:enabled {
+    color: #bf0f1d !important;
+    border-color: #bf0f1d !important;
+}
+
+.CancelRemoveProfile{
+    float: right;
+    margin-right: 0px;
+}
+
+.keysafe-RemoveProfile-Container div#master-password {
+    width: 500px !important;
+}
+
+.keysafe-RemoveProfile-Container div#remove-profile-warning {
+    background-color: #D58705;
+    color: white;
+    margin-bottom: 20px;
+    text-align: left;
+    padding: 16px;
+}
+
+.keysafe-RemoveProfile-Container div#remove-profile-warning span {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}

@@ -1,0 +1,34 @@
+.UISearchView{
+    float: right;
+    margin-right: 0;
+}
+
+.UISearchView .search-container {
+    padding: 2px;
+    margin: 11px 12px 13px 12px;
+}
+
+.UISearchView .search-container input:focus {
+    outline: none;
+}
+
+.UISearchView .search-container input::placeholder {
+    color: #999999;
+}
+
+.UISearchView .search-container input {
+    border: none;
+    padding: 5px 4px 3px 4px;
+    background-color: transparent;
+}
+
+.UISearchView .search-container i#reset-input {
+    cursor: pointer;
+}
+
+.UISearchView .search-container i {
+    float: right;
+    color: #999999;
+    font-size: 20px;
+    padding: 2px;
+}

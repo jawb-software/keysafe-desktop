@@ -1,0 +1,30 @@
+.UIQuestionDialog {
+    max-width: 400px;
+    min-height: 200px;
+}
+
+.UIQuestionDialog-Critical{
+}
+
+.UICategoryDialog-Warning {
+    font-size: 0.9em;
+    display: block;
+}
+
+.UIQuestionDialog .question-container {
+    padding: 20px;
+}
+
+.UIQuestionDialog .question-container span {
+    display: block;
+    margin: 10px 0;
+}
+
+.UIQuestionDialog .UIQuestionDialog-Critical span.dialog-title-icon{
+    font-size: 22px !important;
+    width: 5px;
+    margin-right: 0;
+    vertical-align: middle;
+    padding: 8px 10px;
+    display: inline-block;
+}

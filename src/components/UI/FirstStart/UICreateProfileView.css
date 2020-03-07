@@ -1,0 +1,112 @@
+div.UIRegistrationView {
+    padding: 0;
+}
+
+.UIRegistrationView table {
+    width: 900px;
+    margin: 0 auto;
+}
+
+.UIRegistrationView table td{
+    width: 50%;
+}
+
+@media (min-width: 901px) and (max-width: 1250px) {
+    .UIRegistrationView table {
+        width: 1000px;
+    }
+}
+@media (min-width: 1251px) and (max-width: 1600px) {
+    .UIRegistrationView table {
+        width: 1200px;
+    }
+}
+@media (min-width: 1601px) {
+    .UIRegistrationView table {
+        width: 1300px;
+    }
+}
+
+.UIRegistrationView button {
+    margin-top: 0px;
+}
+
+
+div.UIRegistrationView-Section {
+    padding: 20px;
+    width: calc(100% - 40px);
+}
+
+div.UIRegistrationView-Section2 {
+    background-color: #f7f7f7;
+    width: calc(100% - 40px);
+}
+.UIRegistrationView-Section2 .mdl-textfield {
+    width: calc(100% - 0px) !important;
+}
+
+h2.UIRegistrationView {
+    font-size: 2.4em;
+    text-align: left;
+    margin: -20px 0 0 0;
+    padding: 0;
+    line-height: normal;
+    color: #444;
+}
+
+h4.UIRegistrationView {
+    font-size: 1.2em;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    color: #444;
+    border-bottom: 1px solid #c2c2c2;
+}
+
+span.PreTitle {
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+pre.UIRegistrationView {
+    display: inline-block;
+    text-align: left;
+    background-color: #dedede;
+    padding: 4px;
+    color: black;
+    border-radius: 2px;
+    margin: 5px 0 0 0;
+    user-select: text;
+    font-size: 1.2em;
+}
+
+span.UIRegistrationView {
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-size: 17px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+div.UIRegistrationView .mdl-progress {
+    width: 100% !important;
+}
+
+
+div.UIRegistrationView label#password-score-label {
+    font-size: 12px;
+    margin-top: 2px;
+    display: inline-block;
+}
+
+div.UIRegistrationView div#password-score {
+    margin-top: 10px;
+}
+
+div.UIRegistrationView div#password-2 {
+    margin-top: -10px;
+}

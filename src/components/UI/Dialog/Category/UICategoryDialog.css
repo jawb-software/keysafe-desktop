@@ -1,0 +1,21 @@
+.UICategoryDialog {
+    width: 400px;
+    height: 200px;
+    max-width: 400px;
+    min-height: 200px;
+}
+
+.UICategoryDialog .input-container .mdl-textfield{
+    width: calc(100% - 40px);
+    margin: 0 20px 0 20px;
+}
+.UICategoryDialog .input-container {
+    padding: 22px 0;
+    text-align: center;
+}
+
+.UICategoryDialog-Warning {
+    font-size: 0.9em;
+    color: #b71c1c;
+    display: block;
+}

@@ -1,0 +1,21 @@
+.UISlider {
+    padding: 0;
+}
+
+.UISlider .mdl-slider {
+
+}
+
+.UISlider span.label {
+    margin-left: 25px;
+    color: #444;
+    float: left;
+}
+
+.UISlider span.value {
+    margin-right: 25px;
+    color: #444;
+    float: right;
+    font-weight: bold;
+}
+

@@ -1,0 +1,134 @@
+
+.Category-Selector {
+    width: 300px;
+    height: 100%;
+    z-index: 250;
+    overflow: hidden;
+}
+
+.Category-Selector-Name {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    position: relative;
+}
+
+.Category-Selector #category-name-label {
+    line-height: 12px;
+    margin-top: 5px;
+    margin-left: 1px;
+}
+
+.Category-Selector #category-name-value {
+    font-size: 1.5em;
+    display: block;
+    width: 230px;
+    overflow: hidden;
+    padding-right: 10px;
+    margin-right: 10px;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.Category-Selector #category-name-container {
+    float: left;
+    padding: 5px 5px 5px 20px;
+    overflow: hidden;
+}
+.Category-Selector #category-icon-container {
+    position: absolute;
+    right: 18px;
+    top:16px;
+}
+
+.Category-Selector span {
+    display: block;
+    width: 100%;
+}
+
+
+.Category-Selector #category-name-icon {
+}
+
+.Category-Selector #category-list {
+    position: absolute;
+    left: 0;
+    width: 300px;
+    margin-bottom: 30px;
+    z-index: 250;
+}
+
+.Category-Selector #category-list ul { list-style: none; width: 100%; margin: 0; padding: 0;}
+.Category-Selector #category-list ul li {
+    font-size: 1.1em;
+    padding: 7px 2px 7px 20px;
+    cursor: pointer;
+    border-left: 5px solid transparent;
+    color: #444;
+}
+.Category-Selector #category-list ul li:hover {
+    /*background-color: #f2f2f2;*/
+}
+
+.Category-Selector #category-list ul li.Category-Selected {
+    /*background-color: #f2f2f2 !important;*/
+}
+
+.Category-Selector #category-list ul li.Category-CreateNew {
+    border: 1px dashed #cdcdcd;
+    margin: 10px 10px;
+    padding: 5px 7px;
+    font-size: 1.0em;
+}
+
+.Category-Selector #category-list ul li.Category-CreateNew:hover {
+}
+
+.Category-Selector #category-list input {
+    margin: 15px 14px 10px 14px;
+    width: calc(100% - 38px);
+    height: 22px;
+    padding: 2px 4px;
+    font-size: 1.2em;
+    border: none;
+    color: white;
+    background-color: transparent;
+}
+
+.Category-Selector #category-list input::placeholder {
+    color: #999999;
+}
+
+.Category-Selector #category-list input:focus {
+    outline: none;
+}
+
+.Category-Selector #category-list #category-list-items {
+    height: calc(100% - 75px);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.Category-Selector #category-list #category-list-items div#no-items{
+    text-align: center;
+    font-size: 1.5em;
+    color: #6a737d;
+    padding: 20px;
+}
+
+.Category-List-Btn-Container {
+    margin: 5px 14px;
+    padding: 5px;
+    border-top: 1px solid #f2f2f2;
+}
+
+#password-list-overlay {
+    background-color: black;
+    opacity: 0.4;
+    position: fixed;
+    top: 73px;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+}

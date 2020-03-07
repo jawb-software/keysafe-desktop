@@ -1,0 +1,18 @@
+.UICheckbox {
+    margin: 5px 0;
+}
+
+.UICheckbox input {
+    vertical-align: middle;
+}
+.UICheckbox label {
+    display: block;
+    padding-right: 10px;
+    padding-left: 18px;
+    text-indent: -22px;
+}
+
+.UICheckbox label span{
+    vertical-align: middle;
+    font-size: 15px;
+}

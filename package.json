@@ -1,0 +1,82 @@
+{
+  "name": "keysafe",
+  "version": "1.0.0",
+  "description": "Keysafe - password manager for desktop. Secure, free and open source",
+  "author": {
+    "name": "jawb software",
+    "email": "contact@jawb.de",
+    "url": "https://www.jawb.de"
+  },
+  "homepage": "https://keysafe-app.com",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "MIT",
+  "main": "main.js",
+  "scripts": {
+    "clean": "rimraf dist builds installers",
+    "prod": "webpack --config webpack.build.config.js && electron --noDevServer .",
+    "dev": "npm run clean && npm run tests && webpack-dev-server --hot --host 0.0.0.0 --port 8088 --config=./webpack.dev.config.js --mode development",
+    "build": "npm run clean && npm run tests && webpack --config webpack.build.config.js --mode production",
+    "package": "npm run build && electron-packager --overwrite  ./ --out=./dist/package --ignore=.idea --icon=src/assets/logo.png",
+    "tests": "jest --verbose",
+    "installer-linux": "npm run package && electron-installer-debian --src ./dist/package/keysafe-linux-x64/ --config installer-debian.config.json"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.5.0",
+    "@babel/preset-env": "^7.5.5",
+    "babel-core": "^7.0.0-beta.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-react": "^7.0.0-beta.3",
+    "babili-webpack-plugin": "^0.1.2",
+    "css-loader": "^2.1.1",
+    "date-format": "^2.0.0",
+    "electron": "^4.1.0",
+    "electron-installer-debian": "^2.0.1",
+    "electron-packager": "^13.1.1",
+    "electron-rebuild": "^1.8.4",
+    "file-loader": "^3.0.1",
+    "frameless-titlebar": "^1.0.8",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.9.0",
+    "latest-version": "^5.1.0",
+    "mini-css-extract-plugin": "^0.4.0",
+    "nedb": "^1.8.0",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-import": "^11.1.0",
+    "postcss-loader": "^2.1.4",
+    "postcss-nested": "^3.0.0",
+    "postcss-pxtorem": "^4.0.1",
+    "prop-types": "15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.8.6",
+    "react-highlight-words": "^0.16.0",
+    "rimraf": "^2.6.2",
+    "style-loader": "^0.19.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.1.10"
+  },
+  "dependencies": {},
+  "files": [
+    "**/*",
+    "!dist"
+  ],
+  "build": {
+    "appId": "de.jawb.keysafe",
+    "category": "de.jawb.keysafe.desktop",
+    "productName": "keysafe",
+    "icon": "src/assets/logo.png",
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.UISettingsDialog {
+    max-width: 80%;
+    width: 650px;
+    height: 500px;
+}
+
+.UISettingsDialog #settings-container {
+    padding: 20px;
+}
+
+.UISettingsDialog #settings-container h5 {
+    margin: 5px 0 15px 0;
+    color: #444;
+}
+
+.UISettingsDialog #settings-container div.element {
+    margin: 10px 0;
+}
+
+.UISettingsDialog .UISelect {
+    max-width: 300px !important;
+}
+
+.UISettingsDialog .space {
+    height: 1px;
+}

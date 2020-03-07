@@ -1,0 +1,48 @@
+.UIImportFileInfoDialog {
+    width: 600px;
+    max-width: 90%;
+}
+
+.UIImportFileInfoDialog .import-container .mdl-textfield{
+    width: calc(100% - 40px);
+    margin: 0 20px 0 20px;
+}
+.UIImportFileInfoDialog .import-container {
+    padding: 22px 14px;
+    text-align: left;
+}
+
+.UIImportFileInfoDialog .mdl-data-table {
+    table-layout:fixed;
+    width:100%;
+    border: none;
+}
+.UIImportFileInfoDialog #backup-info-table td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    padding: 0 20px 0 10px !important;
+    text-align: left;
+}
+
+.UIImportFileInfoDialog #backup-progress-rr {
+    width: 100%;
+}
+
+.UIImportFileInfoDialog #backup-password-container {
+    padding: 20px 100px;
+    height: 130px;
+    display: flex;
+    vertical-align: middle;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.UIImportFileInfoDialog #backup-password-container span.message {
+    display: block;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: #444;
+}

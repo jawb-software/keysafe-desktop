@@ -1,0 +1,91 @@
+.UIBaseDialog-Backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 200;
+}
+
+.UIBaseDialog-Content {
+    background-color: #fff;
+    margin: 90px auto 0 auto;
+    position: relative;
+}
+
+.UIBaseDialog-Content .title-subtitle,
+.UIBaseDialog-Content .title {
+    font-size: 1.2em;
+    width: 100%;
+    cursor: default;
+    float: left;
+}
+
+.UIBaseDialog-Content .title span.dialog-title {
+    font-size: 0.9em;
+    vertical-align: middle;
+    padding: 8px 10px;
+    display: inline-block;
+}
+
+.UIBaseDialog-Content .title span.dialog-subtitle {
+    font-size: 0.7em;
+    vertical-align: middle;
+    padding: 8px 10px;
+    display: block;
+}
+
+.UIBaseDialog-Content .title-subtitle span.dialog-title {
+    font-size: 0.9em;
+    vertical-align: middle;
+    padding: 8px 10px 0 10px;
+    display: inline-block;
+}
+.UIBaseDialog-Content .title-subtitle span.dialog-subtitle {
+    font-size: 0.71em;
+    vertical-align: middle;
+    padding: 0 10px 8px 10px;
+    display: block;
+}
+
+.UIBaseDialog-Content .title .Close-Cross {
+    padding: 6px 16px 10px 16px;
+    float:right;
+}
+
+.UIBaseDialog-Content .title .Close-Cross:hover{
+    background-color: red;
+}
+
+.UIBaseDialog-Content .footer {
+    border-top: 1px solid #f2f2f2;
+    width: 100%;
+    padding: 14px 0;
+}
+
+.UIBaseDialog-Content button {
+    min-width: 90px;
+    margin-right: 10px;
+    padding: 5px;
+    background-color: #f2f2f2;
+    border: 1px solid #c2c2c2;
+    outline: none;
+    float: right;
+}
+
+.UIBaseDialog-Content button:active {
+    background-color: #ececec;
+    box-shadow: none;
+}
+
+
+.UIBaseDialog-Content button:disabled {
+    background-color: #f7f7f7;
+    border: 1px solid #d7d7d7;
+    color: #c3c3c3;
+}
+
+.UIBaseDialog-Input-Error {
+    color: red !important;
+}

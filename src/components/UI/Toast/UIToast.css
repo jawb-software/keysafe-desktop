@@ -1,0 +1,9 @@
+.mdl-snackbar {
+    border-radius: 2px !important;
+    bottom: 30px;
+}
+
+.mdl-snackbar__text {
+    width: 100%;
+    text-align: center !important;
+}

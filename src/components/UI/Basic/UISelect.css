@@ -1,0 +1,7 @@
+.UISelect {
+    padding: 0;
+}
+
+.UISelect .mdl-selectfield {
+    width: 100%;
+}

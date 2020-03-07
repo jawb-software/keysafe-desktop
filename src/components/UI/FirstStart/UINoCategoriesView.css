@@ -1,0 +1,50 @@
+.keysafe-Inner-Container button.BasicButton {
+    margin-top: 10px;
+}
+
+.add-password-card {
+    width: 100%;
+}
+
+.add-password-card i {
+    font-size: 6.0em !important;
+}
+
+#add-buttons-container .add-button div.add-password-card:hover{
+    background-color: white;
+}
+
+#add-buttons-container {
+    padding: 0;
+    margin-top: 10px;
+}
+
+#add-buttons-container .add-button div.add-password-card{
+    height: 180px;
+    max-height: 180px;
+}
+
+#add-buttons-container .add-button{
+    display: inline-block;
+    width: 250px;
+    padding: 10px;
+    margin: 0;
+}
+
+#add-buttons-container .add-button i{
+    display: block;
+    padding: 20px;
+    height: 80px;
+}
+
+#add-buttons-container .add-button i#i1{
+    font-size: 80px;
+}
+
+#add-buttons-container .add-button i#i2{
+    font-size: 70px;
+}
+
+#add-buttons-container .add-button span{
+    font-size: 20px;
+}

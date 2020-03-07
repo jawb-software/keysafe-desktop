@@ -1,0 +1,36 @@
+.mdl-progress {
+    width: 80% !important;
+    margin: auto !important;
+}
+.mdl-progress-row{
+    display:flex;
+    align-items:center;
+}
+
+.UILoading-Outer-Container {
+    display: table;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    height: calc(100% - 80px);
+    width: 100%;
+}
+
+.UILoading-Middle-Container {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.UILoading-Inner-Container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    margin-bottom: 7%;
+}
+
+.UILoading-Message {
+    display: block;
+    color: #444444;
+    text-align: center;
+    margin-top: 14px;
+}

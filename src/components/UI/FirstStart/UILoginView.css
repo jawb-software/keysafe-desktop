@@ -1,0 +1,51 @@
+.LoginButton{
+    float: left;
+    margin-left: 0px;
+}
+
+.CreateProfileButton{
+    float: right;
+    margin-right: 0px;
+
+}
+
+.keysafe-Login-Container{
+    width: 350px;
+}
+
+@media screen and (min-width: 901px) and (max-width: 1250px) {
+    .keysafe-Login-Container{
+        width: 350px;
+    }
+}
+@media screen and (min-width: 1251px) and (max-width: 1600px) {
+    .keysafe-Login-Container{
+        width: 350px;
+    }
+}
+@media screen and (min-width: 1601px) {
+    .keysafe-Login-Container{
+        width: 400px;
+    }
+}
+
+.keysafe-Login-Container .mdl-selectfield,
+.keysafe-Login-Container .mdl-textfield {
+    width: 100%;
+}
+
+.keysafe-Login-Container .mdl-selectfield {
+    line-height: 50px !important;
+    padding: 16px 0px 18px 0;
+}
+
+
+.keysafe-Login-Container .mdl-textfield__label {
+    top: 0px;
+}
+
+
+.keysafe-Login-Container .mdl-textfield input{
+    font-size: 26px;
+    padding: 0 0 2px 0 !important;
+}

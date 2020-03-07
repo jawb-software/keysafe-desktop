@@ -1,0 +1,23 @@
+.keysafe-StatusBar-Container {
+    width: 100%;
+    min-width: 950px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #ededed;
+    border-top: 1px solid #cdcdcd;
+    z-index: 300;
+}
+
+.keysafe-StatusBar-Container .StatusBar-Item{
+    border-right: 1px solid #e2e2e2;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.keysafe-StatusBar-Container .StatusBar-Item span {
+    font-size: 0.8em;
+    display: inline-block;
+    color: #585858;
+    padding: 2px 15px;
+}

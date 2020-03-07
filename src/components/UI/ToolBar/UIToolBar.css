@@ -1,0 +1,60 @@
+.clear{
+    clear: both;
+}
+
+.UIToolBar {
+    height: 50px;
+    display: flex;
+    z-index: 3;
+}
+
+.UIToolBarSection {
+    font-size: 0.8em;
+    flex: 1;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.UIToolBarSection-Selectable {
+    width: 300px;
+    max-width: 300px;
+    z-index: 3;
+}
+
+.UIToolBar .search-input .mdl-textfield__expandable-holder {
+    margin-top: 10px;
+}
+
+.UIToolBar .search-input .mdl-textfield {
+    padding: 0 !important;
+}
+
+.UIToolBar .search-input label {
+    color: white;
+    top:10px !important
+}
+
+.UIToolBar .search-input input {
+    color: white;
+}
+
+.UIToolBar .search-input  {
+    float: right;
+    margin-right: 40px;
+}
+
+
+.UIToolBar-Button {
+    display: inline-block;
+    color: white;
+    background-color: #9fa8da;
+    width: 60px;
+    height: 100%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.UIToolBar-Button i {
+    background-color: #b71c1c;
+}

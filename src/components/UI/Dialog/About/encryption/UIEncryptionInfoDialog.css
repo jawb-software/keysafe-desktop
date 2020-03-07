@@ -1,0 +1,47 @@
+.UIEncryptionInfoDialog {
+    width: 90%;
+    max-width: 1100px;
+    height: 450px;
+}
+
+.UIEncryptionInfoDialog div#content-container {
+    padding: 20px;
+}
+
+.UIEncryptionInfoDialog span#encryption-title {
+    font-size: 15px;
+    color: #444;
+    display: block;
+    margin-left: 2px;
+    margin-bottom: 10px;
+}
+
+.UIEncryptionInfoDialog div#encryption-examples {
+    padding: 0;
+    overflow-x: auto;
+    width: 100%;
+}
+
+.UIEncryptionInfoDialog span#encryption-examples-title {
+    font-size: 15px;
+    color: #444;
+    display: block;
+    margin: 25px 0 10px 2px;
+}
+
+.UIEncryptionInfoDialog pre {
+    display: inline-block;
+    text-align: left;
+    background-color: #f2f2f2;
+    padding: 4px;
+    color: black;
+    border-radius: 2px;
+    margin: 5px 0 0 0;
+    user-select: text;
+    width: calc(100% - 8px);
+}
+
+.UIEncryptionInfoDialog pre#example {
+    font-size: 12px;
+}
+

@@ -1,0 +1,59 @@
+.UIDEVDbViewDialog {
+    width: 90%;
+    max-width: 90%;
+
+    height: calc(100vh - 130px);
+}
+
+.mdl-data-table {
+    width: 100%;
+    box-shadow: none;
+}
+
+.mdl-data-table th {
+    font-weight: bold;
+    color: black;
+    font-size: 1.1em;
+}
+
+.UIDEVDbViewDialog select {
+    margin: 4px 10px;
+    padding: 4px;
+}
+
+.UIDEVDbViewDialog select option{
+}
+
+.UIDEVDbViewDialog pre.Db-Info {
+    color: #6a737d;
+    font-size: 22px;
+    user-select: text;
+    margin: 0 auto;
+    width: 600px;
+    text-align: center;
+}
+
+.UIDEVDbViewDialog pre.table-row {
+    text-align: left;
+}
+
+.database-container {
+    overflow-x: auto;
+    overflow-y: auto;
+    height: calc(100% - 40px);
+}
+
+.database-container td, th {
+    max-width: 200px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    -o-text-overflow: ellipsis !important;
+    -webkit-user-select: text !important;
+    font-size: 11px;
+}
+
+#select-db-msg {
+    color: #6a737d;
+    padding: 20px;
+}

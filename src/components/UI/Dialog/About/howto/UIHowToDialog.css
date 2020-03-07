@@ -1,0 +1,64 @@
+.UIHowToDialog {
+    width: 90%;
+    height: calc(100vh - 160px);
+}
+
+
+.UIHowToDialog div#content-container {
+    height: calc(100vh - 200px);
+    overflow-y: auto;
+}
+
+.UIHowToDialog div.how-to-entry {
+    user-select: text;
+}
+
+.UIHowToDialog div.how-to-entry span.entry-text {
+    display: block;
+    margin-bottom: 30px;
+}
+
+.UIHowToDialog ul {
+    position: absolute;
+    top: 36px;
+    left: 0;
+    bottom: 0;
+    width: 350px;
+    list-style: none;
+    padding: 10px 0 0 0;
+    margin: 0;
+}
+
+.UIHowToDialog ul li{
+    padding: 10px 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.UIHowToDialog #item-text {
+    float: right;
+    width: calc(100% - 390px);
+    padding: 20px;
+}
+
+.UIHowToDialog #item-text p {
+    font-size: 16px;
+}
+
+.UIHowToDialog #item-text span.example {
+    text-align: left;
+    font-family: monospace;
+    display: block;
+    width: 200px;
+    font-size: 20px;
+    margin: 10px auto;
+}
+
+
+.UIHowToDialog #item-text span.entry-title {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 20px;
+}

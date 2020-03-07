@@ -1,0 +1,18 @@
+.UISettingsViewProfileSection {
+
+}
+.UISettingsViewProfileSection div#remove-profile{
+    border-top: 1px solid #cbcbcb;
+    position: absolute;
+    bottom: 5px;
+    width: calc(100% - 40px);
+}
+
+button.RemoveProfile-Button {
+    background-color: #bf0f1d;
+    border-color: #7a0a13;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 25px;
+}
