@@ -13,7 +13,7 @@ npm run dev
 - Node.js: https://nodejs.org
 - Material Design Lite: https://getmdl.io
 
-###License
+### License
 GNU GPLv3
 
     keysafe - the password manager
