@@ -13,7 +13,9 @@ import {
     USER_ACTION_IMPORT_PASSWORDS,
     USER_ACTION_NEW_CATEGORY,
     USER_ACTION_NEW_PASSWORD,
-    USER_ACTION_OPEN_ABOUT, USER_ACTION_OPEN_ABOUT_ENCRYPTION_INFO, USER_ACTION_OPEN_HOWTO,
+    USER_ACTION_OPEN_ABOUT,
+    USER_ACTION_OPEN_ABOUT_ENCRYPTION_INFO,
+    USER_ACTION_OPEN_HOWTO,
     USER_ACTION_OPEN_NEW_PROFILE_VIEW,
     USER_ACTION_OPEN_SETTINGS,
     USER_ACTION_REMOVE_CATEGORY,
@@ -183,47 +185,28 @@ class UIWindowsTitleBar extends React.Component {
             return null;
         }
 
-        const showIcon = platform !== 'darwin';
         const theme = getCurrentTheme();
 
         return (
 
             <div>
-            {showIcon
-                    ? <TitleBar
-                        icon={KeysafeIcon}
-                        menu={KeysafeMenu}
-                        theme={{
-                            barTheme: 'dark',
-                            barShowBorder: true,
-                            menuDimItems: false,
-                            showIconDarLin: true,
-                            menuItemHoverBackground: theme.COLOR_TITLEBAR_MENU_HOVER_BACKGROUND,
-                            menuTextHighlightColor: theme.COLOR_TITLEBAR_MENU_ITEM_HOVER_TEXT,
-                            menuItemTextColor: theme.COLOR_TITLEBAR_MENU_TEXT,
-                            menuHighlightColor: theme.COLOR_TITLEBAR_MENU_ITEM_HOVER_BACKGROUND,
-                            barBackgroundColor: theme.COLOR_TITLEBAR_BACKGROUND,
-                            barBorderBottom: '1px solid ' + theme.COLOR_TITLEBAR_BORDER,
-                        }}
-                        platform={platform}
-                    />
-                    :  <TitleBar
-                            menu={KeysafeMenu}
-                            theme={{
-                                barTheme: 'dark',
-                                barShowBorder: true,
-                                menuDimItems: false,
-                                showIconDarLin: false,
-                                menuItemHoverBackground: theme.COLOR_TITLEBAR_MENU_HOVER_BACKGROUND,
-                                menuTextHighlightColor: theme.COLOR_TITLEBAR_MENU_ITEM_HOVER_TEXT,
-                                menuItemTextColor: theme.COLOR_TITLEBAR_MENU_TEXT,
-                                menuHighlightColor: theme.COLOR_TITLEBAR_MENU_ITEM_HOVER_BACKGROUND,
-                                barBackgroundColor: theme.COLOR_TITLEBAR_BACKGROUND,
-                                barBorderBottom: '1px solid ' + theme.COLOR_TITLEBAR_BORDER,
-                            }}
-                            platform={platform}
-                        />
-            }
+                <TitleBar
+                    icon={KeysafeIcon}
+                    menu={KeysafeMenu}
+                    theme={{
+                        barTheme: 'dark',
+                        barShowBorder: true,
+                        menuDimItems: false,
+                        showIconDarLin: true,
+                        menuItemHoverBackground: theme.COLOR_TITLEBAR_MENU_HOVER_BACKGROUND,
+                        menuTextHighlightColor: theme.COLOR_TITLEBAR_MENU_ITEM_HOVER_TEXT,
+                        menuItemTextColor: theme.COLOR_TITLEBAR_MENU_TEXT,
+                        menuHighlightColor: theme.COLOR_TITLEBAR_MENU_ITEM_HOVER_BACKGROUND,
+                        barBackgroundColor: theme.COLOR_TITLEBAR_BACKGROUND,
+                        barBorderBottom: '1px solid ' + theme.COLOR_TITLEBAR_BORDER,
+                    }}
+                    platform={platform}
+                />
             </div>
         );
     }

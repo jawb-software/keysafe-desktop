@@ -10,7 +10,7 @@ class UICloseOnlyTitleBar extends React.Component {
 
     render() {
 
-        const {platform} = this.props;
+        const platform = process.platform;
 
         if(platform !== 'win32'){
             return null;
