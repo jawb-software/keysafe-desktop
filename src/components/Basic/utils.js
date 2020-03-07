@@ -22,6 +22,13 @@ export function openDownload() {
     }
 }
 
+export function openLicense() {
+    try {
+        require('electron').shell.openExternal('https://github.com/jawb-software/keysafe-desktop/blob/master/LICENSE');
+    } catch (e) {
+        console.error(e);
+    }
+}
 
 export function openGithub() {
     try {
