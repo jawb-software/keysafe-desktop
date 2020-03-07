@@ -3,7 +3,6 @@ node_modules/
 *.DS_Store
 dist/
 builds/
-installers/
 .idea/
 *.impl
 package-lock.json

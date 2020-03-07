@@ -1,5 +1,5 @@
 {
-  "dest": "release/installers/",
+  "dest": "release/linux/",
   "icon": "src/assets/logo.png",
   "arch" : "amd64",
   "categories": [
