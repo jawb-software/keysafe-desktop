@@ -31,7 +31,6 @@ div.UIRegistrationView {
     margin-top: 0px;
 }
 
-
 div.UIRegistrationView-Section {
     padding: 20px;
     width: calc(100% - 40px);
@@ -41,6 +40,7 @@ div.UIRegistrationView-Section2 {
     background-color: #f7f7f7;
     width: calc(100% - 40px);
 }
+
 .UIRegistrationView-Section2 .mdl-textfield {
     width: calc(100% - 0px) !important;
 }
@@ -80,14 +80,15 @@ pre.UIRegistrationView {
     border-radius: 2px;
     margin: 5px 0 0 0;
     user-select: text;
-    font-size: 1.2em;
+    font-size: 1.1em;
 }
 
 span.UIRegistrationView {
     display: block;
     width: 100%;
+    font-weight: normal;
     text-align: left;
-    font-size: 17px;
+    font-size: 16px;
     margin-top: 20px;
     margin-bottom: 20px;
 }
