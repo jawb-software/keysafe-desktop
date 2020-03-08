@@ -1,6 +1,6 @@
 {
-  "dest": "release/linux/",
-  "icon": "src/assets/logo.png",
+  "dest": "dist/installers/linux/",
+  "icon": "src/assets/linux/logo.png",
   "arch" : "amd64",
   "categories": [
     "Utility"

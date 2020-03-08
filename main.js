@@ -1,3 +1,10 @@
+// handle setupevents as quickly as possible
+const setupEvents = require('./src/installers/windows_SetupEvents');
+if(setupEvents.handleSquirrelEvent()) {
+    // squirrel event handled and app will exit in 1000ms, so don't do anything else
+    return;
+}
+
 // Import parts of electron to use
 const {app, Menu, BrowserWindow, remote} = require('electron');
 const path  = require('path');
