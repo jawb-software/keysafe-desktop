@@ -7,7 +7,6 @@
 }
 
 .add-password-card i {
-    font-size: 6.0em !important;
 }
 
 #add-buttons-container .add-button div.add-password-card:hover{
@@ -20,8 +19,8 @@
 }
 
 #add-buttons-container .add-button div.add-password-card{
-    height: 180px;
-    max-height: 180px;
+    height: 140px;
+    max-height: 140px;
 }
 
 #add-buttons-container .add-button{
@@ -34,17 +33,19 @@
 #add-buttons-container .add-button i{
     display: block;
     padding: 20px;
-    height: 80px;
 }
 
 #add-buttons-container .add-button i#i1{
-    font-size: 80px;
+    font-size: 70px;
+    height: 60px;
 }
 
 #add-buttons-container .add-button i#i2{
-    font-size: 70px;
+    font-size: 55px !important;
+    margin-top: 5px;
+    height: 55px;
 }
 
 #add-buttons-container .add-button span{
-    font-size: 20px;
+    font-size: 16px;
 }
