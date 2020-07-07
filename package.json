@@ -34,7 +34,7 @@
     "babili-webpack-plugin": "^0.1.2",
     "css-loader": "^2.1.1",
     "date-format": "^2.0.0",
-    "electron": "^4.1.0",
+    "electron": "^9.1.0",
     "electron-packager": "^14.2.1",
     "electron-rebuild": "^1.10.0",
     "electron-winstaller": "^4.0.0",
