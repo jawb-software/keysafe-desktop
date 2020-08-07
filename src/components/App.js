@@ -545,7 +545,7 @@ class App extends React.Component {
     }
 
     render() {
-        // this.log('render');
+        this.log('render', this.state.viewState);
 
         const viewState = this.state.viewState;
 

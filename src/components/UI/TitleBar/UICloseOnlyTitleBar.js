@@ -9,10 +9,11 @@ class UICloseOnlyTitleBar extends React.Component {
     }
 
     render() {
-
         const platform = process.platform;
 
         if(platform !== 'win32'){
+            const Menu = require('electron').remote.Menu;
+            Menu.setApplicationMenu(null);
             return null;
         }
 
@@ -21,6 +22,7 @@ class UICloseOnlyTitleBar extends React.Component {
                 <TitleBar
                     icon={KeysafeIcon}
                     app={'keysafe'}
+                    menu={null}
                     theme={{
                         barTitleColor : '#c2c2c2',
                         barTheme: 'dark',

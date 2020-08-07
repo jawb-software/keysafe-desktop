@@ -117,7 +117,7 @@ function createWindow() {
     }
     mainWindow.setMenuBarVisibility(false);
     mainWindow.loadURL(indexPath);
-    // mainWindow.openDevTools();
+    mainWindow.openDevTools();
 
     // Don't show until we are ready and loaded
     mainWindow.once('ready-to-show', () => {

@@ -29,10 +29,10 @@ class UIImportFileInfoDialog extends React.Component {
         };
         this.backupFileInfo = this.props.backupFileInfo;
 
-        this.handleOKClick = this.handleOKClick.bind(this);
+        this.handleOKClick      = this.handleOKClick.bind(this);
         this.handleCancelClick  = this.handleCancelClick.bind(this);
-        this.handleChange    = this.handleChange.bind(this);
-        this.handleKeyPress  = this.handleKeyPress.bind(this);
+        this.handleChange       = this.handleChange.bind(this);
+        this.handleKeyPress     = this.handleKeyPress.bind(this);
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {

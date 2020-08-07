@@ -36,7 +36,6 @@ class UIWindowsTitleBar extends React.Component {
     }
 
     render() {
-
         const platform = process.platform;
 
         const KeysafeMenu = [
