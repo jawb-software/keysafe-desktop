@@ -3,7 +3,6 @@ import {THEME} from "./consts";
 const dateFormat = require('date-format');
 const {remote} = require('electron');
 
-
 export function getCurrentTheme() {
     try {
         const name = remote.getGlobal('defaults').theme || 'dark';

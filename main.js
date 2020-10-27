@@ -61,8 +61,7 @@ function createWindow() {
             height: height,
             minWidth: width, // set a min width!
             minHeight: height, // and a min height!
-            frame: false,
-            titleBarStyle: 'hidden',
+            frame: true,
             title: 'keysafe',
             enableRemoteModule : false,
             nodeIntegration: true

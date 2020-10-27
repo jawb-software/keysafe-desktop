@@ -1,0 +1,5 @@
+div.UITitleBar-Unix {
+    height: 20px;
+    background-color: #2f353b;
+    border-bottom: 1px solid black;
+}

@@ -98,8 +98,12 @@ class UICreateProfileView extends React.Component {
             password2   = this.state.password2;
             passwordsAreEqual = password2 === password1;
             profileNameOK     = (!profileName || profileName.length === 0) || this._nameIsNew(profileName);
+            passwordIsStrong  = passwordScorePoints >= MIN_MASTER_PW_SCORE && password1.length >= MIN_MASTER_PW_LENGTH;
 
-            this.setState({profileName: value, canSave: profileNameOK && passwordsAreEqual && password1.length >= MIN_MASTER_PW_LENGTH});
+            this.setState({
+                profileName: value,
+                canSave: profileNameOK && passwordIsStrong && passwordsAreEqual
+            });
 
         } else if (id === 'inp-2') {
 
@@ -109,10 +113,12 @@ class UICreateProfileView extends React.Component {
             passwordsAreEqual = password2 === password1;
             profileNameOK     = (!profileName || profileName.length === 0) || this._nameIsNew(profileName);
             passwordScorePoints = calculateScore(password1).score();
-            passwordIsStrong = passwordScorePoints >= MIN_MASTER_PW_SCORE;
+            passwordIsStrong = passwordScorePoints >= MIN_MASTER_PW_SCORE && password1.length >= MIN_MASTER_PW_LENGTH;
 
-
-            this.setState({password1: password1, canSave: profileNameOK && passwordIsStrong && passwordsAreEqual && password1.length >= MIN_MASTER_PW_LENGTH});
+            this.setState({
+                password1: password1,
+                canSave: profileNameOK && passwordIsStrong && passwordsAreEqual
+            });
 
         } else if (id === 'inp-3') {
 
@@ -122,9 +128,12 @@ class UICreateProfileView extends React.Component {
             passwordsAreEqual = password2 === password1;
             profileNameOK     = (!profileName || profileName.length === 0) || this._nameIsNew(profileName);
             passwordScorePoints = calculateScore(password1).score();
-            passwordIsStrong = passwordScorePoints >= MIN_MASTER_PW_SCORE;
+            passwordIsStrong = passwordScorePoints >= MIN_MASTER_PW_SCORE && password1.length >= MIN_MASTER_PW_LENGTH;
 
-            this.setState({password2: password2, canSave: profileNameOK && passwordIsStrong && passwordsAreEqual && password1.length >= MIN_MASTER_PW_LENGTH});
+            this.setState({
+                password2: password2,
+                canSave: profileNameOK && passwordIsStrong && passwordsAreEqual
+            });
         }
 
         const label1 = document.querySelector('#password-1 .mdl-textfield__label');
@@ -167,7 +176,7 @@ class UICreateProfileView extends React.Component {
         //
         if(password1 || password2){
 
-            setTimeout(() =>{
+            setTimeout(() => {
                 self.updatePasswordScore(passwordScorePoints);
             }, 100);
 

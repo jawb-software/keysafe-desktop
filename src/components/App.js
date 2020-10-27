@@ -1,6 +1,6 @@
 import React from 'react';
 
-import UIWindowsTitleBar from './UI/TitleBar/UIWindowsTitleBar';
+import UITitleBar from './UI/TitleBar/UITitleBar';
 import UIToolBar from './UI/ToolBar/UIToolBar';
 import UIPasswordList from './UI/PasswordList/UIPasswordList';
 import UILoadingView from "./UI/Loading/UILoadingView";
@@ -668,7 +668,7 @@ class App extends React.Component {
         return (
             <div>
 
-                <UIWindowsTitleBar
+                <UITitleBar
                     canExport={hasCategories}
                     canChangeCategory={canChangeCategory}
                     canCreatePassword={hasCategories}

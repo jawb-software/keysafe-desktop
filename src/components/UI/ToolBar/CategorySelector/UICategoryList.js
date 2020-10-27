@@ -81,6 +81,7 @@ class UICategoryList extends React.Component {
         const allCategories  = this.state.categories;
         const filterTerm     = this.state.categoryFilter.toLowerCase();
         let categoriesToShow = [];
+        const needFilter     = allCategories.length && allCategories.length > 4;
 
         const theme          = getCurrentTheme();
 
@@ -122,9 +123,16 @@ class UICategoryList extends React.Component {
             height : 'calc(100% - ' + top + ')'
         };
 
+        const filterInputStyle = {
+            backgroundColor: theme.COLOR_NAVIGATION_LIST_SEARCH_INPUT_BACKGROUND,
+            // visibility : needFilter ? 'visible' : 'hidden'
+        };
+
         return (
             <div id="category-list" style={ categoryListStyle }>
-                <input value={this.state.categoryFilter} onKeyDown={this.onFilterCategoryKeyDown} style={{backgroundColor: theme.COLOR_NAVIGATION_LIST_SEARCH_INPUT_BACKGROUND}} onChange={this.handleInput.bind(this)} placeholder={textSearch} />
+
+                <input value={this.state.categoryFilter} onKeyDown={this.onFilterCategoryKeyDown} style={filterInputStyle} onChange={this.handleInput.bind(this)} placeholder={textSearch} />
+
                 <div id="category-list-items">
                     <ul>
                         { categoriesToShow.length > 0

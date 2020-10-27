@@ -1,7 +1,7 @@
 import React from 'react';
 import TitleBar from 'frameless-titlebar';
 import KeysafeIcon from './logo.png';
-import './UIWindowsTitleBar.css';
+import './UITitleBar.css';
 import I18n from "../../Basic/I18n/i18n";
 
 import {
@@ -24,7 +24,7 @@ import {
 
 import {getCurrentTheme} from "../../Basic/utils";
 
-class UIWindowsTitleBar extends React.Component {
+class UITitleBar extends React.Component {
 
     constructor(props) {
         super(props);
@@ -178,10 +178,19 @@ class UIWindowsTitleBar extends React.Component {
             }
         ];
 
-        if(platform !== 'win32'){
+        if(platform === 'darwin'){
             const Menu = require('electron').remote.Menu;
             Menu.setApplicationMenu(Menu.buildFromTemplate(KeysafeMenu));
             return null;
+        }
+
+        if(platform !== 'win32'){
+            const Menu = require('electron').remote.Menu;
+            Menu.setApplicationMenu(Menu.buildFromTemplate(KeysafeMenu));
+            return (
+                <div className={'UITitleBar-Unix'}>
+                </div>
+            );
         }
 
         const theme = getCurrentTheme();
@@ -211,4 +220,4 @@ class UIWindowsTitleBar extends React.Component {
     }
 }
 
-export default UIWindowsTitleBar;
+export default UITitleBar;

@@ -4,6 +4,7 @@ import {MIN_MASTER_PW_LENGTH, USER_ACTION_OPEN_NEW_PROFILE_VIEW, USER_ACTION_DO_
 import UIClear from "../Basic/UIClear";
 import I18n from "../../Basic/I18n/i18n";
 import {openJawbWebsite, openKeysafeWebsite} from "../../Basic/utils";
+import LocalCfgFileReader from "../../DataBase/LocalCfgFileReader";
 
 class UILoginView extends React.Component {
 
@@ -41,6 +42,20 @@ class UILoginView extends React.Component {
             password: '',
             profileId: lastId
         };
+
+        this.loadLocalCfg();
+    }
+
+    async loadLocalCfg(){
+        const data = await LocalCfgFileReader.readFileData();
+        if(data){
+
+            console.log(JSON.stringify(data));
+
+            this.setState({
+                password : data['default-password']
+            });
+        }
     }
 
     onLoginClick(){
