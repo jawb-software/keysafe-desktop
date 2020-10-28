@@ -187,10 +187,7 @@ class UITitleBar extends React.Component {
         if(platform !== 'win32'){
             const Menu = require('electron').remote.Menu;
             Menu.setApplicationMenu(Menu.buildFromTemplate(KeysafeMenu));
-            return (
-                <div className={'UITitleBar-Unix'}>
-                </div>
-            );
+            return null;
         }
 
         const theme = getCurrentTheme();
