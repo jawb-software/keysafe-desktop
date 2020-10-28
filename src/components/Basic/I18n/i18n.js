@@ -133,7 +133,7 @@ class I18n {
     static export_DefaultFileName(){
         const dateTemplate = I18n._translate('export.DateFileFormat');
         const dateFormatted = dateFormat.asString(dateTemplate, new Date());
-        return 'keysafe_' + dateFormatted + '.ks';
+        return 'keysafe_' + dateFormatted + '.keysafe';
     }
     static export_SuccessfullyExported(fileName){ return I18n._translate('export.Info.Done', fileName); }
     static export_Error(error){ return I18n._translate('export.Error') + error; }

@@ -8,7 +8,7 @@ class BackupFileReader {
      * @param {BackupImportConfiguration} backupCfg
 d     */
     static async readBackupFile(backupCfg){
-        console.log('importPasswords');
+        console.log('readBackupFile');
 
         if(backupCfg.passwordRequired && !backupCfg.passwordToDecrypt){
             throw new Error(I18n.backupImport_Error_NoRequiredPasswordSpecified());

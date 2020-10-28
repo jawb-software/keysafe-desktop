@@ -613,7 +613,28 @@ class DataLoader {
         const decrypted = new Map();
         let importedCount = 0;
 
-        if(backup.hasOwnProperty('keys')){
+        if(backup.version === 2) {
+
+            const categories = backup.profiles[0].categories;
+            const decryptedPWs = [];
+
+            for (let i = 0; i < categories.length; i++){
+
+                const category     = categories[i];
+                const categoryName = tempCrypt.decrypt(category.name);
+
+                for(let i = 0; i < category.keys.length; i++){
+                    const pw = category.keys[i];
+                    decryptedPWs.push({
+                        name: tempCrypt.decrypt(pw.name),
+                        password : tempCrypt.decrypt(pw.password),
+                        userName: tempCrypt.decrypt(pw.userName)
+                    });
+                }
+                decrypted.set(categoryName, decryptedPWs);
+            }
+
+        } else {
 
             //
             for (let categoryEnc in backup.keys){
@@ -631,61 +652,70 @@ class DataLoader {
                 decrypted.set(categoryName, decryptedPWs);
             }
 
-            const viewCfg = await this.loadProfileViewConfiguration(profileId);
+        }
 
-            for(const [categoryName, passwordList] of decrypted.entries()){
+        const viewCfg = await this.loadProfileViewConfiguration(profileId);
 
-                // console.log(categoryName);
+        for(const [categoryName, passwordList] of decrypted.entries()){
 
-                let cat = await this.getCategoryByName(profileId, categoryName);
-                if(!cat){
-                    cat = await this.createCategory(profileId, {name: categoryName});
-                }
-                const categoryId = cat.id;
+            // console.log(categoryName);
 
-                for (let i = 0; i < passwordList.length; i++){
-                    const passwordToSave = passwordList[i];
+            let cat = await this.getCategoryByName(profileId, categoryName);
+            if(!cat){
+                cat = await this.createCategory(profileId, {name: categoryName});
+            }
+            const categoryId = cat.id;
 
-                    const originalName = passwordToSave.name;
-                    let name    = originalName;
-                    let save    = false;
-                    let j       = 2;
+            for (let i = 0; i < passwordList.length; i++){
+                const passwordToSave = passwordList[i];
 
-                    while(true){ // Namenskollision
+                const originalName = passwordToSave.name;
+                let name    = originalName;
+                let save    = false;
+                let j       = 2;
 
-                        const withSameName = await self.passwords.getByLCHash(profileId, categoryId, Crypt.hash_sha1_lc(name));
+                while(true){ // Namenskollision
 
-                        if(withSameName){
+                    const withSameName = await self.passwords.getByLCHash(profileId, categoryId, Crypt.hash_sha1_lc(name));
 
-                            // pruefe ob die gleich sind
-                            const existingUserName = this.crypt.decrypt(withSameName.userName);
-                            const existingPassword = this.crypt.decrypt(withSameName.password);
+                    if(withSameName){
 
-                            if(passwordToSave.userName === existingUserName && passwordToSave.password === existingPassword){
+                        // pruefe ob die gleich sind
+                        const existingUserName = this.crypt.decrypt(withSameName.userName);
+                        const existingPassword = this.crypt.decrypt(withSameName.password);
 
-                                // nichts tun, das password ist schon in der DB
-                                save = false;
-                                break;
+                        if(passwordToSave.userName === existingUserName && passwordToSave.password === existingPassword){
 
-                            } else {
-                                name = originalName + "-" + (j++); // wähle neuen Namen und teste nochmal
-                            }
-                        } else {
-                            save = true;
+                            // nichts tun, das password ist schon in der DB
+                            save = false;
                             break;
+
+                        } else {
+                            name = originalName + "-" + (j++); // wähle neuen Namen und teste nochmal
                         }
+                    } else {
+                        save = true;
+                        break;
                     }
-
-                    if(save){
-                        passwordToSave.name = name;
-                        await self.createPassword(profileId, categoryId, passwordToSave, viewCfg);
-                        importedCount++;
-                    }
-
                 }
+
+                if(save){
+                    passwordToSave.name = name;
+                    await self.createPassword(profileId, categoryId, passwordToSave, viewCfg);
+                    importedCount++;
+                }
+
             }
         }
         return importedCount;
+    }
+
+    _reEncrypt(encryptedTxt){
+        if(encryptedTxt.indexOf('#') < 0){
+            encryptedTxt = this.crypt.decrypt(encryptedTxt);
+            encryptedTxt = this.crypt.encrypt(encryptedTxt);
+        }
+        return encryptedTxt;
     }
 
     async exportPasswords(profileId, targetFile){
@@ -695,12 +725,19 @@ class DataLoader {
             await this.initDBs();
         }
 
+        const profile = await this.loadProfile(profileId);
+
         const backup = {
+            version : 2,
             created : new Date(),
             encrypted: true,
-            keys : {}
+            profiles : [
+                {
+                    name : this.crypt.encrypt(profile.name),
+                    categories : []
+                }
+            ]
         };
-
 
         let categoryDocs = await this.categories.getAll(profileId);
         for(let i = 0; i < categoryDocs.length; i++){
@@ -710,16 +747,19 @@ class DataLoader {
 
             if(passwordDocs && passwordDocs.length){
 
-                backup.keys[category.name] = passwordDocs.map( doc => {
+                let keys = passwordDocs.map(doc => {
                     return {
-                        name: doc.name,
-                        userName: doc.userName,
-                        password: doc.password
+                        name: this._reEncrypt(doc.name),
+                        userName: this._reEncrypt(doc.userName),
+                        password: this._reEncrypt(doc.password)
                     }
                 });
 
-            } else {
-                backup.keys[category.name] = [];
+                backup.profiles[0].categories.push({
+                    name : this._reEncrypt(category.name),
+                    keys : keys
+                });
+
             }
 
         }

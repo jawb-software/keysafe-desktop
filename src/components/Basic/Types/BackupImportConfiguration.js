@@ -7,17 +7,33 @@ class BackupImportConfiguration {
 
         let passwordCount   = 0;
         let categoriesCount = 0;
+        const version       = backup['version'];
 
-        if(backup.hasOwnProperty('keys')){
-            for (let categoryEnc in backup.keys){
-                passwordCount += backup.keys[categoryEnc].length;
-                categoriesCount++;
+        if(version === 2){
+
+            const categories = backup.profiles[0].categories;
+            for (let i = 0; i < categories.length; i++){
+                passwordCount += categories[i].keys.length;
             }
+            categoriesCount = categories.length;
+            this.version = 2;
+            this.passwordRequired = true;
+
+        } else {
+
+            if(backup.hasOwnProperty('keys')){
+                for (let categoryEnc in backup.keys){
+                    passwordCount += backup.keys[categoryEnc].length;
+                    categoriesCount++;
+                }
+            }
+
+            this.version = 1;
+            this.passwordRequired = backup.encrypted;
         }
 
-        this.created = new Date(backup.created);
-        this.passwordRequired = backup.encrypted;
-        this.passwords = passwordCount;
+        this.created    = new Date(backup.created);
+        this.passwords  = passwordCount;
         this.categories = categoriesCount;
         this.passwordToDecrypt = null;
         this.file = file;

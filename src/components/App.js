@@ -1608,7 +1608,7 @@ class App extends React.Component {
 
         dialog.showOpenDialog({
             filters: [
-                { name: I18n.backupImport_FileFilterName(), extensions: ['txt', 'ks'] }
+                { name: I18n.backupImport_FileFilterName(), extensions: ['txt', 'ks', 'keysafe'] }
             ],
             properties: ['openFile']
         }, (files) =>{
@@ -1725,6 +1725,7 @@ class App extends React.Component {
 
             })
             .catch( err => {
+                console.error(err);
                 self._showToast(I18n.export_Error(err), true);
             });
         });

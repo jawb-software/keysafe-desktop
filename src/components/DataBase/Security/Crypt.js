@@ -96,9 +96,9 @@ class Crypt {
 
         try {
 
-            let parts = null;
+            let parts;
 
-            if(encryptedText.includes('#')){ // legacy code
+            if(encryptedText.includes('#')){
                 parts = encryptedText.split('#');
             } else {
                 parts = Array(3);
@@ -137,7 +137,9 @@ class Crypt {
         const encrypted = Buffer.concat([cipher.update(plainText, 'utf8'), cipher.final()]);
 
         return Buffer.from(salt).toString('base64')
+            + '#'
             + Buffer.from(iv).toString('base64')
+            + '#'
             + Buffer.from(encrypted).toString('base64');
     }
 
