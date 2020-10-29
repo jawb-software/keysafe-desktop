@@ -106,7 +106,7 @@ export const USER_ACTION_CLOSE_HOWTO = 'CLOSE_HOWTO';
 
 export const USER_ACTION_RESET_SESSION_TIMER  = 'USER_ACTION_RESET_SESSION_TIMER';
 
-export const CFG_LOG_APP          = true;
+export const CFG_LOG_APP          = false;
 export const CFG_LOG_REPOSITORIES = false;
 export const CFG_LOG_DATALOADER   = false;
 

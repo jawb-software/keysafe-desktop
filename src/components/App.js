@@ -218,32 +218,6 @@ class App extends React.Component {
         this.unregisterListeners();
     }
 
-    getMacMenuTemplate(){
-        const MAC_MENU_TEMPLATE = {
-            label: I18n.appMenu_Profile(),
-            submenu: [
-                {
-                    label:  I18n.appMenu_Profile_New(),
-                    click() {
-                        //ipc.send(USER_ACTION_OPEN_NEW_PROFILE_VIEW)
-                    }
-                },
-                { type: 'separator' },
-                {
-                    id: USER_ACTION_EXPORT_PASSWORDS,
-                    label:  I18n.appMenu_Profile_Export(),
-                    enabled: false,
-                    click: () => {
-                        //ipc.send(USER_ACTION_EXPORT_PASSWORDS);
-                    }
-                }
-            ]
-        };
-
-        return [MAC_MENU_TEMPLATE];
-
-}
-
     onUserAction(action, value){
 
         if(CFG_LOG_APP){
@@ -553,7 +527,7 @@ class App extends React.Component {
 
             return (
                 <div>
-                    <UICloseOnlyTitleBar/>
+                    <UICloseOnlyTitleBar onUserAction={ this.onUserAction }/>
                     <UILoadingView/>
                     <UIToast ref={this.toast}/>
                 </div>
@@ -563,7 +537,7 @@ class App extends React.Component {
 
             return (
                 <div>
-                    <UICloseOnlyTitleBar/>
+                    <UICloseOnlyTitleBar onUserAction={ this.onUserAction }/>
                     <UILoadingView label={I18n.session_CleaningData()}/>
                     <UIToast ref={this.toast}/>
                 </div>
@@ -573,7 +547,7 @@ class App extends React.Component {
 
             return (
                 <div>
-                    <UICloseOnlyTitleBar/>
+                    <UICloseOnlyTitleBar onUserAction={ this.onUserAction }/>
                     <UILoadingView label={I18n.export_ExportingData()}/>
                     <UIToast ref={this.toast}/>
                 </div>
@@ -583,7 +557,7 @@ class App extends React.Component {
 
             return (
                 <div>
-                    <UICloseOnlyTitleBar/>
+                    <UICloseOnlyTitleBar onUserAction={ this.onUserAction }/>
                     LOADING_ALL_ERROR
                     <UIToast ref={this.toast}/>
                 </div>
@@ -593,7 +567,7 @@ class App extends React.Component {
 
             return (
                 <div>
-                    <UICloseOnlyTitleBar/>
+                    <UICloseOnlyTitleBar onUserAction={ this.onUserAction }/>
                     <UICreateProfileView onUserAction={ this.onUserAction } profiles={this.state.profileList}/>
                     <UIToast ref={this.toast}/>
                 </div>
@@ -603,7 +577,7 @@ class App extends React.Component {
 
             return (
                 <div>
-                    <UICloseOnlyTitleBar/>
+                    <UICloseOnlyTitleBar onUserAction={ this.onUserAction }/>
                     <UILoginView onUserAction={ this.onUserAction } profiles={this.state.profileList}/>
                     <UIToast ref={this.toast}/>
                 </div>
@@ -612,7 +586,7 @@ class App extends React.Component {
 
             return (
                 <div>
-                    <UICloseOnlyTitleBar/>
+                    <UICloseOnlyTitleBar onUserAction={ this.onUserAction }/>
                     <UIRemoveProfileView onUserAction={ this.onUserAction } profile={this.state.profile}/>
                     <UIToast ref={this.toast}/>
                 </div>
@@ -853,16 +827,15 @@ class App extends React.Component {
 
     _handleExit() {
 
-
         this.setState(App.defaultState(VIEW_STATE_CLEANING_DATA, []));
         this._clearSessionTimeout();
         this._clearClipboard();
         this.dataLoader.cleanForExit();
 
         setTimeout(function () {
-            const {app, remote} = require('electron');
-            let w = (app || remote).getCurrentWindow();
-            w.close();
+
+            require('electron').remote.app.quit();
+            
         }, 500);
 
     }
@@ -1042,6 +1015,13 @@ class App extends React.Component {
     }
 
     _handleConfirmRemoveProfile(){
+
+
+        const Menu = require('electron').remote.Menu;
+        Menu.setApplicationMenu(Menu.buildFromTemplate([]));
+        // const Menu = require('electron').remote.Menu;
+        // Menu.setApplicationMenu(null);
+
         this.setState({
             viewState: VIEW_STATE_CONFIRM_REMOVE_PROFILE,
             showSettingsDialog : false

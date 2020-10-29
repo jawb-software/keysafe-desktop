@@ -178,12 +178,6 @@ class UITitleBar extends React.Component {
             }
         ];
 
-        if(platform === 'darwin'){
-            const Menu = require('electron').remote.Menu;
-            Menu.setApplicationMenu(Menu.buildFromTemplate(KeysafeMenu));
-            return null;
-        }
-
         if(platform !== 'win32'){
             const Menu = require('electron').remote.Menu;
             Menu.setApplicationMenu(Menu.buildFromTemplate(KeysafeMenu));
