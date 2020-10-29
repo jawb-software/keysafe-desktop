@@ -123,14 +123,25 @@ class UIPasswordListItem extends React.Component {
                         {title}
                     </div>
                     <div className="mdl-card__actions mdl-card--border">
-                        <ul className="keysafe-list-no-dots">
-                            <li onClick={self.onCopyUserNameClicked}>
-                                <a className="mdl-button mdl-js-button">{item.userName}</a>
-                            </li>
-                            <li onClick={self.onCopyPasswordClicked}>
-                                <a className="mdl-button mdl-js-button">{item.password}</a>
-                            </li>
-                        </ul>
+
+                        {item.userName &&
+                            <ul className="keysafe-list-no-dots">
+                                <li onClick={self.onCopyUserNameClicked}>
+                                    <a className="mdl-button mdl-js-button">{item.userName}</a>
+                                </li>
+                                <li onClick={self.onCopyPasswordClicked}>
+                                    <a className="mdl-button mdl-js-button">{item.password}</a>
+                                </li>
+                            </ul>
+                        }
+
+                        {!item.userName &&
+                            <ul className="keysafe-list-no-dots">
+                                <li onClick={self.onCopyPasswordClicked} className={'no-username'}>
+                                    <a className="mdl-button mdl-js-button">{item.password}</a>
+                                </li>
+                            </ul>
+                        }
 
                         { showPasswordScore &&
                         <div>

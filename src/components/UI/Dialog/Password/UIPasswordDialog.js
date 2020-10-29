@@ -80,7 +80,7 @@ class UIPasswordDialog extends React.Component {
 
     canBeSaved(input, src){
 
-        if(!input){
+        if(!input && src !== FIELD_LOGIN_NAME){ // Login Name darf leer sein
             return ERR_INPUT_IS_EMPTY;
         }
 

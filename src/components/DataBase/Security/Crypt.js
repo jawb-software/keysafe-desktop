@@ -30,11 +30,21 @@ class Crypt {
     }
 
     decrypt(encryptedText) {
+
+        if(!encryptedText){
+            return encryptedText;
+        }
+
         const symmetricKey = Crypt._decrypt(this.sessionKey, this.algorithm, this.symmetricKey);
         return Crypt._decrypt(symmetricKey, this.algorithm, encryptedText);
     }
 
     encrypt(plainText) {
+
+        if(!plainText){
+            return plainText;
+        }
+
         const symmetricKey = Crypt._decrypt(this.sessionKey, this.algorithm, this.symmetricKey);
         return Crypt._encrypt(symmetricKey, this.algorithm, plainText);
     }

@@ -19,7 +19,7 @@ class Password {
     static createNew(name, userName, password, category, profileId){
         return new Password({
             name : name,
-            userName : userName,
+            userName : userName && userName.length > 0 ? userName : null,
             password : password,
             category : category,
             profile  : profileId,
@@ -68,12 +68,17 @@ class Password {
      * @param viewConfiguration Profile
      */
     decrypt(cipher, viewConfiguration){
-        this.name     = cipher.decrypt(this.name);
+        this.name = cipher.decrypt(this.name);
 
         if(viewConfiguration){
-            this.userName = viewConfiguration && viewConfiguration.showUserName ? cipher.decrypt(this.userName) : '**********';
+
+            if(this.userName){ // kann leer sein
+                this.userName = viewConfiguration && viewConfiguration.showUserName ? cipher.decrypt(this.userName) : '**********';
+            }
+
             this.password = viewConfiguration && viewConfiguration.showPassword ? cipher.decrypt(this.password) : '**********';
             this.score    = viewConfiguration && viewConfiguration.showPasswordScore ? cipher.decrypt(this.score) : '';
+
         } else {
             this.userName = cipher.decrypt(this.userName);
             this.password = cipher.decrypt(this.password);
@@ -97,7 +102,7 @@ class Password {
                 obj['_id'] = value;
             } else {
                 obj[key] = value;
-                if(value == null || typeof value === 'undefined'){
+                if(key !== 'userName' && (value == null || typeof value === 'undefined')){
                     throw new Error("key '" + key + "' may not be empty");
                 }
             }
