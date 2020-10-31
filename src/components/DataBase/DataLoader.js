@@ -616,21 +616,24 @@ class DataLoader {
         if(backup.version === 2) {
 
             const categories = backup.profiles[0].categories;
-            const decryptedPWs = [];
 
             for (let i = 0; i < categories.length; i++){
 
+                const decryptedPWs = [];
                 const category     = categories[i];
                 const categoryName = tempCrypt.decrypt(category.name);
 
                 for(let i = 0; i < category.keys.length; i++){
+
                     const pw = category.keys[i];
+
                     decryptedPWs.push({
-                        name: tempCrypt.decrypt(pw.name),
-                        password : tempCrypt.decrypt(pw.password),
-                        userName: tempCrypt.decrypt(pw.userName)
+                        name:       tempCrypt.decrypt(pw.name),
+                        password:   tempCrypt.decrypt(pw.password),
+                        userName:   tempCrypt.decrypt(pw.userName)
                     });
                 }
+
                 decrypted.set(categoryName, decryptedPWs);
             }
 

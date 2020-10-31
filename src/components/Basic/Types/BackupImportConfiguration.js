@@ -32,7 +32,7 @@ class BackupImportConfiguration {
             this.passwordRequired = backup.encrypted;
         }
 
-        this.created    = new Date(backup.created);
+        this.created    = backup.created;
         this.passwords  = passwordCount;
         this.categories = categoriesCount;
         this.passwordToDecrypt = null;

@@ -835,7 +835,7 @@ class App extends React.Component {
         setTimeout(function () {
 
             require('electron').remote.app.quit();
-            
+
         }, 500);
 
     }

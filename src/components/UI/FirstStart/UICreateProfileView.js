@@ -88,7 +88,7 @@ class UICreateProfileView extends React.Component {
 
         const id    = e.target.id;
         const value = e.target.value;
-        let profileName, password1, password2, passwordsAreEqual, profileNameOK, passwordIsStrong;
+        let profileName, password1, password2, passwordOK, profileNameOK;
         let passwordScorePoints = 0;
 
         if (id === 'inp-1') {
@@ -96,13 +96,12 @@ class UICreateProfileView extends React.Component {
             profileName = value;
             password1   = this.state.password1;
             password2   = this.state.password2;
-            passwordsAreEqual = password2 === password1;
+            passwordOK  = password2 === password1 && password1.length > 0;
             profileNameOK     = (!profileName || profileName.length === 0) || this._nameIsNew(profileName);
-            passwordIsStrong  = passwordScorePoints >= MIN_MASTER_PW_SCORE && password1.length >= MIN_MASTER_PW_LENGTH;
 
             this.setState({
                 profileName: value,
-                canSave: profileNameOK && passwordIsStrong && passwordsAreEqual
+                canSave: profileNameOK && passwordOK
             });
 
         } else if (id === 'inp-2') {
@@ -110,14 +109,13 @@ class UICreateProfileView extends React.Component {
             profileName = this.state.profileName;
             password1   = value;
             password2   = this.state.password2;
-            passwordsAreEqual = password2 === password1;
+            passwordOK  = password2 === password1 && password1.length > 0;
             profileNameOK     = (!profileName || profileName.length === 0) || this._nameIsNew(profileName);
             passwordScorePoints = calculateScore(password1).score();
-            passwordIsStrong = passwordScorePoints >= MIN_MASTER_PW_SCORE && password1.length >= MIN_MASTER_PW_LENGTH;
 
             this.setState({
                 password1: password1,
-                canSave: profileNameOK && passwordIsStrong && passwordsAreEqual
+                canSave: profileNameOK && passwordOK
             });
 
         } else if (id === 'inp-3') {
@@ -125,14 +123,13 @@ class UICreateProfileView extends React.Component {
             profileName       = this.state.profileName;
             password1         = this.state.password1;
             password2         = value;
-            passwordsAreEqual = password2 === password1;
+            passwordOK  = password2 === password1 && password1.length > 0;
             profileNameOK     = (!profileName || profileName.length === 0) || this._nameIsNew(profileName);
             passwordScorePoints = calculateScore(password1).score();
-            passwordIsStrong = passwordScorePoints >= MIN_MASTER_PW_SCORE && password1.length >= MIN_MASTER_PW_LENGTH;
 
             this.setState({
                 password2: password2,
-                canSave: profileNameOK && passwordIsStrong && passwordsAreEqual
+                canSave: profileNameOK && passwordOK
             });
         }
 
@@ -144,15 +141,11 @@ class UICreateProfileView extends React.Component {
             label2.classList.remove("UIBaseDialog-Input-Error");
         } else {
 
-            if(passwordsAreEqual){
-                if(passwordIsStrong){
-                    label1.classList.remove("UIBaseDialog-Input-Error");
-                    label2.classList.remove("UIBaseDialog-Input-Error");
-                } else {
-                    label1.classList.add("UIBaseDialog-Input-Error");
-                }
+            if(passwordOK){
+                label1.classList.remove("UIBaseDialog-Input-Error");
+                label2.classList.remove("UIBaseDialog-Input-Error");
             } else {
-                if(password2){
+                if(password1 !== password2){
                     label2.classList.add("UIBaseDialog-Input-Error");
                 }
             }
@@ -174,13 +167,9 @@ class UICreateProfileView extends React.Component {
         const self = this;
 
         //
-        if(password1 || password2){
-
-            setTimeout(() => {
-                self.updatePasswordScore(passwordScorePoints);
-            }, 100);
-
-        }
+        setTimeout(() => {
+            self.updatePasswordScore(passwordScorePoints);
+        }, 100);
 
     }
 

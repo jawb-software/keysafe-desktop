@@ -163,7 +163,7 @@ class UIImportFileInfoDialog extends React.Component {
                             </tr>
                             <tr>
                                 <td> {textCreated} </td>
-                                <td>{backupFileInfo.created.toLocaleDateString()}</td>
+                                <td>{backupFileInfo.created}</td>
                             </tr>
                             </tbody>
                         </table>
